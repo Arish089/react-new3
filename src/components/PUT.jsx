@@ -1,16 +1,17 @@
 import axios from 'axios'
 import React from 'react'
 
-const PUT = () => {
+const PUT = ({currentEnvironment,baseURL,BASE_DEV_URL,BASE_PRODUCTION_URL}) => {
 async function getAllPosts(){
     try {
         let resp = await axios({
             method: "put",
-            url: `https://jsonplaceholder.typicode.com/posts/1`,
+            url: `${baseURL}/posts/1`,
             data:{
                 title: "New title",
                 body: "Random content",
-                userId: 2.
+                userId: 2,
+                id: "2",
             }
         });
         console.log(resp);    

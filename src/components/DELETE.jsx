@@ -1,12 +1,12 @@
 import React from 'react'
 import axios from 'axios';
 
-const DELETE = () => {
+const DELETE = ({currentEnvironment,baseURL,BASE_DEV_URL,BASE_PRODUCTION_URL}) => {
     async function getAllPosts(){
         try {
             let resp = await axios({
                 method: "delete",
-                url: `https://jsonplaceholder.typicode.com/posts/1`
+                url: `${baseURL}/posts/1`
             });
             console.log(resp);    
         } catch (error) {

@@ -1,13 +1,8 @@
 import axios from 'axios';
 import React from 'react'
 
-const POST = () => {
-    const BASE_PRODUCTION_URL = import.meta.env.VITE_BASE_PRODUCTION_URL;
- const BASE_DEV_URL = import.meta.env.VITE_BASE_DEV_URL;
- const currentEnvironment = import.meta.env.MODE;
-
- const baseURL = currentEnvironment === "production" ?
- BASE_PRODUCTION_URL : BASE_DEV_URL;
+const POST = ({currentEnvironment,baseURL,BASE_DEV_URL,BASE_PRODUCTION_URL}) => {
+    
 const getAllPosts = async ()=>{
     try {
         let resp = await axios({
@@ -30,6 +25,7 @@ async function makePostRequest(){
                 userId: 1,
                 title: "foo",
                 body: "bar",
+                id:1
             },
         });
         console.log(resp);
