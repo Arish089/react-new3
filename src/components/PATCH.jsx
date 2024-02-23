@@ -6,7 +6,8 @@ export default function PATCH ({currentEnvironment,baseURL,BASE_DEV_URL,BASE_PRO
         try {
             let resp = await axios({
                 method: "patch",
-                url: `${baseURL}/posts/1`,
+                baseURL: baseURL,
+                url: `/posts/1`,
                 data:{
                     title: "Updated title",
                     body: "Random content",

@@ -6,7 +6,8 @@ async function getAllPosts(){
     try {
         let resp = await axios({
             method: "put",
-            url: `${baseURL}/posts/1`,
+            baseURL: baseURL,
+            url: `/posts/1`,
             data:{
                 title: "New title",
                 body: "Random content",

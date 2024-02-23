@@ -7,7 +7,8 @@ const getAllPosts = async ()=>{
     try {
         let resp = await axios({
             method: "get",
-            url: `${baseURL}/posts`,
+            baseURL: baseURL,
+            url: `/posts`,
         });
 
         console.log(resp);
@@ -20,12 +21,13 @@ async function makePostRequest(){
     try {
         let resp = await axios({
             method: "post",
-            url:  `${baseURL}/posts`,
+            baseURL: baseURL,
+            url:  `/posts`,
             data: {
                 userId: 1,
                 title: "foo",
                 body: "bar",
-                id:1
+                id:"1"
             },
         });
         console.log(resp);

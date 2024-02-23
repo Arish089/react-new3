@@ -6,7 +6,8 @@ const DELETE = ({currentEnvironment,baseURL,BASE_DEV_URL,BASE_PRODUCTION_URL}) =
         try {
             let resp = await axios({
                 method: "delete",
-                url: `${baseURL}/posts/1`
+                baseURL: baseURL,
+                url: `/posts/1`
             });
             console.log(resp);    
         } catch (error) {
